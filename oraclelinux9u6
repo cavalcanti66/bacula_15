@@ -96,6 +96,11 @@ dnf install bacularis bacularis-httpd bacularis-selinux
 # Inicia/reinicia o Apache
 systemctl restart httpd
 
+# Inicia servico do servidor web no boot 
+systemctl enable httpd
+systemctl start httpd
+
+
 # Regras de Firewall
 firewall-cmd --permanent --zone=public --add-port=9096-9097/tcp
 firewall-cmd --reload
