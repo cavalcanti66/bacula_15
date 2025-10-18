@@ -15,6 +15,10 @@ https://www.bacula.org/bacula-binary-package-download/
 https://www.bacula.org/documentation/documentation/
 
 # Site oficial do Bacularis e sua documentação
+# Diferente do Bacula Community que é mantido pela bacula.org, o Bacularis é um projeto feito pela comunidade, evolução do Baculum.
 https://bacularis.app/
+
+# Recomendação pessoal de conteúdo BR sobre o Bacula Community
+https://www.youtube.com/@podheitor
 
 Mais informações em breve.
