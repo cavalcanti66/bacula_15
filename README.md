@@ -34,6 +34,7 @@ Processo de instalação e configuração do Bacula 15.0.3 e Bacularis (interfac
 Nesse repositório guardei informações sobre o processo em Ubuntu 24.02 e Oracle Linux 9 U6, adapte a sua realidade e necessidade.
 
 Também existem projetos e imagens em docker e coisas do genero, mas tudo feito pela comunidade.
+
 https://hub.docker.com/search?q=bacula&type=image
 
 # Cadastro para receber um repositório do Bacula via e-mail
