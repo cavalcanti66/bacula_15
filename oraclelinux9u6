@@ -113,10 +113,10 @@ service postgresql restart
 chown -R bacula /opt/bacula
 
 echo 'Defaults:apache !requiretty
-apache ALL = (root) NOPASSWD: /opt/bacula/bin/bconsole
-apache ALL = (bacula : bacula) NOPASSWD: /opt/bacula/bin/bdirjson
-apache ALL = (bacula : bacula) NOPASSWD: /opt/bacula/bin/bsdjson
-apache ALL = (bacula : bacula) NOPASSWD: /opt/bacula/bin/bfdjson
-apache ALL = (bacula : bacula) NOPASSWD: /opt/bacula/bin/bbconsjson' > /etc/sudoers.d/bacularis
+apache ALL = (root) NOPASSWD: /usr/bin/bconsole
+apache ALL = (root) NOPASSWD: /opt/bacula/bin/bdirjson
+apache ALL = (root) NOPASSWD: /opt/bacula/bin/bsdjson
+apache ALL = (root) NOPASSWD: /opt/bacula/bin/bfdjson
+apache ALL = (root) NOPASSWD: /opt/bacula/bin/bbconsjson' > /etc/sudoers.d/bacularis
 
 # The Bacularis web interface is available at http://localhost:9097 with default user admin and password admin.
