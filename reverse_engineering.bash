@@ -49,6 +49,12 @@ bscan: bscan.c:513-0 Media record for DB-SRVBACULA-1-11-11-2025-4-43-Full found 
 bscan: bscan.c:543-0 Media type "File1" is OK.
 bscan: bscan.c:552-0 VOL_LABEL: OK for Volume: DB-SRVBACULA-1-11-11-2025-4-43-Full
 
+# Quando o processo terminar, será criado um job com a data de quando o volume foi criado a primeira vez e será readicionado ao banco de dados. Em seguida, faça o processo de restore.
+# When the process is complete, a job will be created with the date when the volume was first created and will be added back to the database. Then perform the restore process.
+
+# O processo pode demorar a depender do tamanho do volume, porque ele fará um "novo" backup no banco.
+# The process may take some time depending on the size of the volume, because it will perform a “new” backup in the database.
+
 # Para mais ajuda, use:
 # For more help, use:
 
