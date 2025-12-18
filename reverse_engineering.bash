@@ -2,6 +2,7 @@
 # Processo de restauração de volumes mesmo que não possua os registros em banco de dados.
 # Em caso de você possuir o volume backupeado, mas os dados não estarem mais disponíveis no banco de dados por qualquer motivo que seja, como perca do banco, política de retenção já fez expurgo ou falha de configuração.
 # O processo de BSCAN NÃO depende do bacula estar configurado, apenas instalado e com o banco de dados ativo, já com as tabelas configuradas (mesmo que zeradas), por se tratar de uma funcionalidade direta do "bconsole".
+# É necessário que os acessos ao banco de dados estejam configurados.
 
 # English
 # Process for restoring volumes even when database records are not available.
