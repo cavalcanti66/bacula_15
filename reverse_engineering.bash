@@ -62,3 +62,45 @@ bscan --help
 
 ####### BEXTRACT
 
+# Processo de extração de backups diretamente dos volumes, sem passar pelo banco de dados nem pelas ferramentas de restauração. Recomendado apenas em casos extremos.
+# This process extracts backups directly from volumes, bypassing the database and standard restoration tools. Recommended only for extreme cases or disaster recovery.
+
+bextract -c /opt/bacula/etc/bacula-sd.conf -v -V volumename /storagevol /caminhorestore
+
+# Sintaxe 
+# /opt/bacula/etc/bacula-sd.conf = # Local do arquivo SD Conf
+# volumename = Nome do volume
+# /storagevol = Local onde está armazenado
+# /caminhorestore = Onde será restaurado
+
+# Command Syntax
+bextract -c /opt/bacula/etc/bacula-sd.conf -v -V volumename /storagevol /restorepath
+
+# Parameter Breakdown:
+
+# /opt/bacula/etc/bacula-sd.conf: Path to the Storage Daemon configuration file.
+# volumename: The specific name of the volume.
+# /storagevol: The directory where the volume file is stored.
+# /restorepath: The destination directory for the restored files.
+
+# Se tudo ocorrer bem, você receberá a seguinte saída
+# Expected Output. If the process runs successfully, you will see an output similar to this:
+
+[root@localhost testebextract]# bextract -c /opt/bacula/etc/bacula-sd.conf -v -V volumename /storagevol /caminhorestore
+bextract: butil.c:299-0 Using device: "/storagevol" for reading.
+18-dez 23:21 bextract JobId 0: Ready to read from volume "volumename" on File device "volumenameB" (/storagevol).
+bextract JobId 0: -rw-------   1 sssd     clevis           3762707822 2025-12-01 13:26:10  /caminhorestore/testebextract/opt/bacula/working/bacula.sql
+bextract JobId 0: -rw-------   1 sssd     clevis           3212665014 2025-12-02 02:10:10  /caminhorestore/testebextract/opt/bacula/working/bacula.sql
+bextract JobId 0: -rw-------   1 sssd     clevis           3212668936 2025-12-02 02:14:11  /caminhorestore/testebextract/opt/bacula/working/bacula.sql
+18-dez 23:26 bextract JobId 0: End of Volume "volumename" at addr=10195598452 on device "storagevol" (/storagevol).
+3 files restored.
+
+# Se voce quiser, também pode criar uma lista de arquivos a serem restaurados, mas vai precisar do caminho exato dos arquivos. A lista suporta expressão regular.
+
+bextract -i /tmp/lista -c /opt/bacula/etc/bacula-sd.conf -v -V diaria-0 /backup /tmp
+
+# You can also provide a list of specific files to restore. Note that you must use the exact file paths. This list supports regular expressions (regex).
+
+bextract -i /tmp/filelist -c /opt/bacula/etc/bacula-sd.conf -v -V daily-0 /backup /tmp
+
+# -i /tmp/filelist: Specifies the input file containing the list of files/patterns to be restored.
