@@ -1,0 +1,27 @@
+# Para fins de estudo
+
+Para finalidades de estudo, no arquivo postgresql.conf, pode ser deixado como:
+
+------
+
+Connection Settings -
+
+listen_addresses = '*'                  # what IP address(es) to listen on;
+
+Para que o banco seja acessivel de qualquer maquina da sua rede, nao recomendo fazer isso em producao (obvio).
+
+------
+
+No arquivo pg_hba.conf:
+
+host all all 192.168.0.0/24 md5
+
+Para autorizar os acessos.
+
+-------
+
+Se necessario, alterar o firewall:
+
+sudo firewall-cmd --add-service=postgresql --permanent
+
+sudo firewall-cmd --reload

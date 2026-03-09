@@ -1,0 +1,5 @@
+# Caminhos de arquivo
+
+/var/lib/pgsql/data/pg_hba.conf
+
+/var/lib/pgsql/data/postgresql.conf
